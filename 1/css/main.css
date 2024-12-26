@@ -1,0 +1,198 @@
+*{
+    padding: 0px;
+    margin: 0;
+}
+
+body {
+    background-color: rgb(255, 255, 255);
+    height: 1000px;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-items:start;  
+    padding-top: 50px;
+    margin-bottom: 30px;
+}
+
+header {
+    background: url(https://staticg.sportskeeda.com/editor/2021/12/937a1-16396765862339-1920.jpg);
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    font-size: larger;
+}
+
+.boosty{
+    width: 100px;   
+}
+
+.main-header {
+    padding: 12px;
+    color: white;
+    background: #0000008d;
+    backdrop-filter: blur(4px);
+    height: 200px; width: 90%;
+    align-self: center;
+}
+
+
+.alar{
+    display: flex;
+    align-items: center;
+    background-color: #00000078;
+    border-radius: 10px;
+    margin-left: 20px; 
+}
+
+.a{
+    
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    padding: 10px;
+    transition: .3s;
+    transition-delay: .2s;
+}
+
+.map{
+    height: 40px;
+}
+
+.search{
+    height: 40px;
+}
+
+.searchbut{
+    height: 40px;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}
+
+
+.a:hover{
+    background-color: rgb(88, 113, 37);
+    color: black;
+}
+
+.sel{
+    height: 43px;
+    width: 20px;
+}
+
+
+
+
+.img{
+    background: none;
+    width: 25px;
+}
+
+footer {
+    display: flex;
+    background: url(https://avatars.mds.yandex.net/i?id=fb92cd29706286d0abff15e265c9bbc9669ad3a7-5354695-images-thumbs&n=13);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 30px;
+}
+
+.afoot {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: .5s;
+    background-color: #00000047;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.afoot:hover {
+    scale: 1.1;
+
+}
+
+.imgfoot{
+    width:150px  ;
+}
+
+main  {
+    min-height: 10vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+main div{
+    background-color:rgb(137, 94, 64);
+    gap: 10px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+    transition-delay: .4;
+}
+
+main div:hover{
+    scale: 1.1;
+    background-color: rgb(192, 133, 90);
+}
+
+main img {
+    width: 100%;
+    height: 60%;
+}
+
+.p{
+    padding: 20px;
+    padding-top: 35px;
+}
+
+main div h1 {
+    padding-left:20px;
+    padding-top: 50px;
+}
+
+.dots{
+    display: none;
+    height: 15vh;
+    background-color: #ffffff64;
+    border-radius: 20px ;
+}
+
+@media (max-width: 775px) {
+    header form, .alar {
+        display: none;
+    }
+
+    .dots{
+        display: block;
+    }
+
+    .main-header{
+        display: flex;
+    }
+}
+
+h4{
+    padding: 15px;
+}

@@ -1,12 +1,10 @@
-
- * {
+* {
   margin: 0;
   padding: 0;
 }
 
 .body {
   color: rgb(255, 255, 255);
-  height: 1000px;
 }
 
 .cards {
@@ -14,6 +12,13 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 50px;
   margin: 0 300px;
+  background: #b5b5b533;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.cards img {
+  border-radius: 30px;
 }
 
 .main {
@@ -36,7 +41,7 @@
   gap: 50px;
   height: 80px;
   background: #a42f2f;
-  width: 100%;
+  width: 95%;
   position: fixed;
   transition: 0.7s;
 }
@@ -54,11 +59,8 @@ img {
 }
 
 .header-imglar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   width: 50px;
-  height: 80px;
+  height: 50px;
   margin-left: 30px;
 }
 
@@ -69,47 +71,67 @@ img {
   transition: 0.7s;
 }
 
-.direction {
-  height: 20px;
-  width: 40px;
-  cursor: pointer;
-  margin-left: 20px;
-}
-
-.directionr {
-  height: 20px;
-  width: 40px;
-  cursor: pointer;
-}
-
-
 .ice {
   width: 100%;
 }
 
 .soz {
-  height: 200px;
-  color: black; 
-  justify-content: center;
-  align-items: center;
+  margin-top: 150px;
+  background: #00000047;
+  padding: 30px;
+  width: 500px;
+  border-radius: 20px;
 }
 
-.coz{
+.coz {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .card {
-  color: black;
+  border: #00000047;
 }
 
 .adam {
   border-radius: 120px;
+  margin-left: 170px;
+  margin-bottom: 20px;
 }
 
-.button-container {
+.buttoncontainer {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+}
+
+.buttoncontainer button {
+  width: 15px;
+  border-radius: 100px;
+  background: #868686;
+  color: white;
+  border: none;
+  transition: 0.3s;
+  margin: 10px;
+}
+
+.buttoncontainer button:hover {
+  background: #a42f2f;
+}
+
+.footercards nav img {
+  width: 30px;
+  height: 30px;
+}
+
+footer {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: #a42f2f;
+  height: 100px;
+  color: white;
+  height: 200px;
 }

@@ -1,0 +1,65 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4d4c4c;
+}
+
+.h1{
+    color: white;
+    padding-left: 20px;
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+}
+
+.versear{
+    margin-right:400px;
+    display: flex;
+    height: 40px;
+}
+
+.text{
+    display: flex;
+    height: 40px;
+}
+
+.sel{
+    width: 20px;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://www.techspot.com/images2/news/bigimage/2020/08/2020-08-10-image-6.png);
+    height: 85vh;
+    backdrop-filter: blur(4px);
+    background-repeat: no-repeat;
+    background-size:cover;
+
+}
+
+.download{
+    margin-top:60px;
+    background-color: rgb(0, 193, 0);
+    border: none;
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    font-size: x-large;
+    color: rgb(255, 255, 255);
+    transition: .3s;
+    animation-delay: .2;
+}
+
+.download:hover{
+    background-color: #000000;
+}

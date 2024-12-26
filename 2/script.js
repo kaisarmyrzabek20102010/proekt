@@ -4,11 +4,11 @@ const logo = document.querySelector(".logo");
 window.addEventListener("scroll", () => {
   if (window.scrollY > 200) {
     header.style.width = "100%";
-    header.style.height = "50px"; 
-    header.style.background = "red"; 
+    header.style.height = "50px";
+    header.style.background = "red";
     logo.style.height = "50px";
   } else {
-    header.style.background = " #a42f2f"
+    header.style.background = " #a42f2f";
     header.style.width = "100%";
     header.style.height = "80px";
     logo.style.height = "80px";
@@ -25,13 +25,14 @@ const newProducts = [
   },
   {
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSWpOwAqkPYPTfRb4psfklZ2gHLGOAnD3eaw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Mkdf6lRKDeFZ0sGsTi5U9uW5tLFHh_rzlg&s",
     name: "Santa wine",
     price: 15,
     oldPrice: 19,
   },
   {
-    image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjzJ66xUK0quNFnFXT5DMchko-DgS_6Vc1qg&s ',
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjzJ66xUK0quNFnFXT5DMchko-DgS_6Vc1qg&s ",
     name: "Santa decore",
     price: 10,
     oldPrice: 13,
@@ -65,17 +66,12 @@ const newProducts = [
     oldPrice: 8,
   },
   {
-    image:
-      "https://media.istockphoto.com/id/173590189/photo/isolated-red-christmas-stocking-a-holiday-ornament.jpg?s=612x612&w=0&k=20&c=YO402dYA0E4Q5LGu9OqvSHr2_Db0-h644zYLLEktMWU=",
+    image: "https://www.foottraffic.com/images/uploads/2440_3677_popup.jpg",
     name: "socks",
     price: 1,
-    oldPrice: 3,  
+    oldPrice: 3,
   },
 ];
-
-
-
-
 
 newProducts.forEach((item) => {
   const card = document.createElement("div");
@@ -83,6 +79,8 @@ newProducts.forEach((item) => {
   const cardName = document.createElement("h2");
   const price = document.createElement("span");
   const oldPrice = document.createElement("span");
+
+  oldPrice.style.textDecoration = "line-through";
 
   card.classList.add("card");
 
@@ -98,88 +96,92 @@ newProducts.forEach((item) => {
   oldPrice.textContent = item.oldPrice + " $";
 });
 
-
-
-
-
-const NUMBER_OF_SNOWFLAKES = 150;
-const MAX_SNOWFLAKE_SIZE = 5;
-const MAX_SNOWFLAKE_SPEED = 3;
-const SNOWFLAKE_COLOUR = 'rgba(228, 228, 228, 0.8)';
+const NUMBER_OF_SNOWFLAKES = 100;
+const MAX_SNOWFLAKE_SIZE = .5;
+const MAX_SNOWFLAKE_SPEED = .3;
+const SNOWFLAKE_COLOUR = "#ddd";
 const snowflakes = [];
 
-const canvas = document.createElement('canvas');
-canvas.style.position = 'absolute';
-canvas.style.pointerEvents = 'none';
-canvas.style.top = '0px';
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+const canvas = document.createElement("canvas");
+canvas.style.position = "absolute";
+canvas.style.pointerEvents = "none";
+canvas.style.top = "0px";
+canvas.style.width = '100%';
+canvas.style.height = '100%';
 document.body.appendChild(canvas);
 
-const ctx = canvas.getContext('2d');
-
+const ctx = canvas.getContext("2d");
 
 const createSnowflake = () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    radius: Math.floor(Math.random() * MAX_SNOWFLAKE_SIZE) + 1,
-    color: SNOWFLAKE_COLOUR,
-    speed: Math.random() * MAX_SNOWFLAKE_SPEED + 1,
-    sway: Math.random() - 0.5 
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  radius: Math.floor(Math.random() * MAX_SNOWFLAKE_SIZE) + 1,
+  color: SNOWFLAKE_COLOUR,
+  speed: Math.random() * MAX_SNOWFLAKE_SPEED + 1,
+  sway: Math.random() - 0.5, 
 });
 
-const drawSnowflake = snowflake => {
-    ctx.beginPath();
-    ctx.arc(snowflake.x, snowflake.y, snowflake.radius, 0, Math.PI * 2);
-    ctx.fillStyle = snowflake.color;
-    ctx.fill();
-    ctx.closePath();
-}
+const drawSnowflake = (snowflake) => {
+  ctx.beginPath();
+  ctx.arc(snowflake.x, snowflake.y, snowflake.radius, 0, Math.PI * 2);
+  ctx.fillStyle = snowflake.color;
+  ctx.fill();
+  ctx.closePath();
+};
 
-const updateSnowflake = snowflake => {
-    snowflake.y += snowflake.speed;
-    snowflake.x += snowflake.sway; 
-    if (snowflake.y > canvas.height) {
-        Object.assign(snowflake, createSnowflake());
-    }
-}
+const updateSnowflake = (snowflake) => {
+  snowflake.y += snowflake.speed;
+  snowflake.x += snowflake.sway; 
+  if (snowflake.y > canvas.height) {
+    Object.assign(snowflake, createSnowflake());
+  }
+};
 
 const animate = () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    snowflakes.forEach(snowflake => {
-        updateSnowflake(snowflake);
-        drawSnowflake(snowflake);
-    });
+  snowflakes.forEach((snowflake) => {
+    updateSnowflake(snowflake);
+    drawSnowflake(snowflake);
+  });
 
-    requestAnimationFrame(animate);
-}
+  requestAnimationFrame(animate);
+};
 
 for (let i = 0; i < NUMBER_OF_SNOWFLAKES; i++) {
-    snowflakes.push(createSnowflake());
+  snowflakes.push(createSnowflake());
 }
 
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 });
 
-window.addEventListener('scroll', () => {
-    canvas.style.top = `${window.scrollY}px`;
+window.addEventListener("scroll", () => {
+  canvas.style.top = `${window.scrollY}px`;
 });
 
-animate() 
+animate();
 
-const direction = document.querySelector(".direction");  
+const first = document.getElementById("first");
+const second = document.getElementById("second");
+const third = document.getElementById("third");
 const coz = document.getElementById("coz");
-const directionr = document.querySelector(".directionr");
 
-direction.addEventListener("click", () => {
-  coz.textContent = "hello i`m a shop assistant";
-})
+first.style.cursor = "pointer";
+second.style.cursor = "pointer";
+third.style.cursor = "pointer";
 
-directionr.addEventListener("click", () => {
-  coz.textContent = "James Miller";
-})
+first.addEventListener("click", () => {
+  coz.textContent = "James Miller ";
+});
 
-const words = document.querySelector(".words");
+second.addEventListener("click", () => {
+  coz.textContent =
+    " Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem provident nam ducimus adipisci ";
+});
+
+third.addEventListener("click", () => {
+  coz.textContent =
+    "rerum asperiores eos error numquam deserunt? Quam iste consequatur esse quos earum nulla harum voluptatem, ad temporibus.";
+});
