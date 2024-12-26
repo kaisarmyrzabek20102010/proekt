@@ -96,18 +96,21 @@ newProducts.forEach((item) => {
   oldPrice.textContent = item.oldPrice + " $";
 });
 
-const NUMBER_OF_SNOWFLAKES = 100;
-const MAX_SNOWFLAKE_SIZE = .5;
-const MAX_SNOWFLAKE_SPEED = .3;
-const SNOWFLAKE_COLOUR = "#ddd";
+
+
+
+const NUMBER_OF_SNOWFLAKES = 50;
+const MAX_SNOWFLAKE_SIZE = 1;
+const MAX_SNOWFLAKE_SPEED = 1;
+const SNOWFLAKE_COLOUR = "rgb(240,240,240)";
 const snowflakes = [];
 
 const canvas = document.createElement("canvas");
 canvas.style.position = "absolute";
 canvas.style.pointerEvents = "none";
 canvas.style.top = "0px";
-canvas.style.width = '100%';
-canvas.style.height = '100%';
+canvas.style.width = "100%";
+canvas.style.height = "100%";
 document.body.appendChild(canvas);
 
 const ctx = canvas.getContext("2d");
@@ -118,7 +121,7 @@ const createSnowflake = () => ({
   radius: Math.floor(Math.random() * MAX_SNOWFLAKE_SIZE) + 1,
   color: SNOWFLAKE_COLOUR,
   speed: Math.random() * MAX_SNOWFLAKE_SPEED + 1,
-  sway: Math.random() - 0.5, 
+  sway: Math.random() - 0.5,
 });
 
 const drawSnowflake = (snowflake) => {
@@ -131,7 +134,7 @@ const drawSnowflake = (snowflake) => {
 
 const updateSnowflake = (snowflake) => {
   snowflake.y += snowflake.speed;
-  snowflake.x += snowflake.sway; 
+  snowflake.x += snowflake.sway;
   if (snowflake.y > canvas.height) {
     Object.assign(snowflake, createSnowflake());
   }
@@ -184,4 +187,51 @@ second.addEventListener("click", () => {
 third.addEventListener("click", () => {
   coz.textContent =
     "rerum asperiores eos error numquam deserunt? Quam iste consequatur esse quos earum nulla harum voluptatem, ad temporibus.";
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Установите конечную дату
+  const deadline = new Date('2024-12-31T23:59:59');
+  
+  // Найдите элементы DOM
+  const elDays = document.querySelector('.timer__days');
+  const elHours = document.querySelector('.timer__hours');
+  const elMinutes = document.querySelector('.timer__minutes');
+  const elSeconds = document.querySelector('.timer__seconds');
+  
+  // Функция склонения числительных
+  const declensionNum = (num, words) => {
+    return words[(num % 100 > 4 && num % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][num % 10 < 5 ? num % 10 : 5]];
+  };
+
+  // Функция обновления таймера
+  const updateTimer = () => {
+
+    const now = new Date();
+    const diff = Math.max(0, deadline - now);
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    elDays.textContent = String(days).padStart(2, '0');
+    elHours.textContent = String(hours).padStart(2, '0');
+    elMinutes.textContent = String(minutes).padStart(2, '0');
+    elSeconds.textContent = String(seconds).padStart(2, '0');
+
+    elDays.dataset.title = declensionNum(days, ['күн', 'күн', 'күн']);
+    elHours.dataset.title = declensionNum(hours, ['сағат', 'сағат', 'сағат']);
+    elMinutes.dataset.title = declensionNum(minutes, ['минут', 'минут', 'минут']);
+    elSeconds.dataset.title = declensionNum(seconds, ['секунд', 'секунд', 'секунд']);
+
+    if (diff === 0) {
+      clearInterval(timerId);
+    }
+  };
+
+  // Запустите таймер
+  updateTimer();
+  const timerId = setInterval(updateTimer, 1000);
 });
