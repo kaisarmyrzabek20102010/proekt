@@ -1,0 +1,99 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  mix-blend-mode:difference;
+}
+
+header {
+  background: #e8e8e8;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  padding: 0px 100px;
+}
+
+.alar {
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-left: 400px;
+  gap: 5px;
+}
+
+.a {
+  text-decoration: none;
+  color:black;
+  border-radius: 10px;
+  padding: 10px;
+  width: 80px;
+  transition: 0.3s;
+  transition: 0.2s; 
+}
+
+.a:hover {
+  color: rgb(81, 81, 81);
+}
+
+.searchbtn {
+  background: rgb(71, 71, 250);
+  text-decoration: none;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+  margin-left: 450px;
+  display: flex;
+  align-items: center;
+}
+
+.searchbtn img{
+  width: 20px;
+  height:20px;
+  mix-blend-mode: multiply;
+  margin-left:4px;
+}
+
+.searchbtn:hover {
+  background: rgb(68, 68, 214);
+}
+
+.div{
+  background: #f5f4f4;
+  width: 200px;
+  height: 150px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr ;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 100px;
+}
+
+.div input{
+  width: 200px;
+  height: 30px;
+  border-radius: 10px;
+  border: none;
+  padding: 5px;
+}
+
+.div button{
+  background:  rgb(71, 71, 250);
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  transition: .2s;
+}
+
+.div button:hover{
+  background:  rgb(68, 68, 214);
+}
