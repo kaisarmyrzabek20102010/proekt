@@ -41,7 +41,7 @@ a.addEventListener("click", () => {
       <label for="password">Password:</label>
       <input type="password" id="password" name="password" required>
 
-      <button type="submit">Login</button>
+      <button type="submit">sign in</button>
     </form>
   </div>
   `;
