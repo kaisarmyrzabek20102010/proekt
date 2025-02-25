@@ -32,7 +32,7 @@ const a = document.getElementById("a");
 a.addEventListener("click", () => {
   document.body.innerHTML = `
   <div class="login-container">
-  <h2>sign up</h2>
+  <h2>sign up to your travel account</h2>
 
     <form id="loginForm">
       <label for="email">Email:</label>
