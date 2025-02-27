@@ -1,0 +1,28 @@
+.testimonial {
+    display: flex;
+    align-items: center;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+}
+
+.testimonial img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.testimonial-content h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.testimonial-content p {
+    margin: 5px 0 0;
+    font-size: 0.9em;
+    color: #555;
+}

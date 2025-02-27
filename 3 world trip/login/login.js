@@ -36,12 +36,14 @@ a.addEventListener("click", () => {
 
     <form id="loginForm">
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" placeholder="email" required>
 
       <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" placeholder="password" required>
 
       <button type="submit">sign in</button>
+
+      <a class='a' href="/3 world trip/main/index.html">go back</a>
     </form>
   </div>
   `;

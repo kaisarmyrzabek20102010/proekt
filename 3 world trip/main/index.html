@@ -1,106 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>document</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header>
       <img
         class="logo"
         src="https://png.pngtree.com/png-clipart/20200722/original/pngtree-world-tour-travel-logo-template-png-image_5059405.jpg"
+        alt="Логотип"
       />
 
       <nav>
         <ul>
-          <li><a href="/3 world trip/login/login.html">login</a></li>
-          <li><a href="/3 world trip/sign up/sign.html">sign up</a></li>
-          <li><a href=""></a></li>
+          <li><a class="a" href="/3 world trip/login/login.html">Войти</a></li>
+          <li><a class="a" href="/3 world trip/sign up/sign.html">Регистрация</a></li>
+          <li><a class="a" href=""></a></li>
         </ul>
       </nav>
-      <button class="btn" id="searchbtn">
-        поиск
-        <img
-           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrUj2k92bjmQ6n8ar-VjIJrkKz8VdmZ5T_9A&s"
-        />
-      </button>
+
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Введите город или страну" />
+      </div>
     </header>
 
-
     <main>
-      <div id="conteiner"></div>
-      <div id="cityContainer"></div>
+      <div class="cityInworld">
+        <h1 id="populcity">📍Известные города планеты</h1>
+        <button class="load" id="remove">Удалить все города</button>
+      </div>
+
+      <div class="city-container" id="cityContainer2"></div>
 
       <div class="otzivi">
-        <div class="adam1">
-          <img src="https://www.georgetown.edu/wp-content/uploads/2022/02/Jkramerheadshot-scaled-e1645036825432-1050x1050-c-default.jpg">
+        <div class="testimonial">
+          <img
+            src="https://www.georgetown.edu/wp-content/uploads/2022/02/Jkramerheadshot-scaled-e1645036825432-1050x1050-c-default.jpg"
+            alt="Фото Анастасии Петровой"
+          />
           <h2>Анастасия Петрова</h2>
-          <h5>Я недавно воспользовался сайтом для планирования своей поездки мре понравилось</h5>
-        </div>
-
-        <div class="adam2">
-          <img src="https://yt3.googleusercontent.com/ytc/AOPolaTZYMKOJhStVl3U13pMFk7hvnMArU3h99g4gieI=s900-c-k-c0x00ffffff-no-rj">
-          <h2>Иван Смирнов</h2>
           <h5>
-            Удобно и просто.Планирование маршрута заняло всего несколько минут</h5>
+            Я недавно воспользовалась сайтом для планирования своей поездки, и мне понравилось!
+          </h5>
+        </div>
+      
+        <div class="testimonial">
+          <img
+            src="https://yt3.googleusercontent.com/ytc/AOPolaTZYMKOJhStVl3U13pMFk7hvnMArU3h99g4gieI=s900-c-k-c0x00ffffff-no-rj"
+            alt="Фото Ивана Смирнова"
+          />
+          <h2>Иван Смирнов</h2>
+          <h5>Удобно и просто. Планирование маршрута заняло всего несколько минут.</h5>
+        </div>
+      
+        <div class="testimonial">
+          <img
+            src="https://i.pinimg.com/originals/b4/bd/5d/b4bd5d2a219c125ff398096d3008820d.png"
+            alt="Фото Александра Иванова"
+          />
+          <h2>Александр Иванов</h2>
+          <h5>
+            Отличный сервис! Быстро нашёл выгодные предложения на авиабилеты и отели.
+          </h5>
+        </div>
+      </div>
+      
+
+
+      <div class="container">
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>Супер-гиды, доступные 24/7</h3>
+          <p>
+            В любое время, где бы вы ни находились, мы готовы помочь и решить любые вопросы, обеспечивая комфорт.
+          </p>
+          <a href="#">Получить консультацию</a>
         </div>
 
-        <div class="adam2">
-          <img src="https://i.pinimg.com/originals/b4/bd/5d/b4bd5d2a219c125ff398096d3008820d.png">
-          <h2>Александр Иванов</h2>
-          <h5>Отличный сервис Быстро нашёл выгодные предложения на авиабилеты и отели</h5>
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>Гарантия на все услуги</h3>
+          <p>
+            Каждому клиенту мы предоставляем персонализированные решения для безупречного сервиса.
+          </p>
+          <a href="#">Стать паломником</a>
+        </div>
+
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>Безопасность на каждом шаге</h3>
+          <p>
+            Наш сервис обеспечивает максимальный комфорт и внимание к деталям на каждом этапе.
+          </p>
+          <a href="#">Связаться с менеджером</a>
+        </div>
+
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>Полная поддержка в Саудовской Аравии</h3>
+          <p>
+            В любое время мы готовы помочь и решить любые вопросы, обеспечивая комфорт.
+          </p>
+          <a href="#">Получить консультацию</a>
+        </div>
+
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>Индивидуальный подход для каждого</h3>
+          <p>
+            Предоставляем персонализированные решения, учитывая все пожелания.
+          </p>
+          <a href="#">Стать паломником</a>
+        </div>
+
+        <div class="card">
+          <div class="icon">⭐</div>
+          <h3>Премиальный сервис от начала до конца</h3>
+          <p>Обеспечиваем максимальный комфорт и внимание к деталям.</p>
+          <a href="#">Связаться с менеджером</a>
         </div>
       </div>
 
-      
-  <div class="container">
-    <div class="card">
-      <div class="icon">⭐</div>
-      <h3>Супер-гиды, доступные 24/7</h3>
-      <p>В любое время, где бы вы ни находились, мы готовы помочь и решить любые вопросы, обеспечивая спокойствие и комфорт.</p>
-      <a href="#">Получить консультацию</a>
-    </div>
 
-    <div class="card">
-      <div class="icon">⭐</div>
-      <h3>Гарантия на все услуги</h3>
-      <p>Каждому клиенту мы предоставляем персонализированные решения для безупречного сервиса.</p>
-      <a href="#">Стать паломником</a>
-    </div>
 
-    <div class="card">
-      <div class="icon">⭐</div>
-      <h3>Безопасность на каждом шаге</h3>
-      <p>Наш сервис обеспечивает максимальный комфорт и внимание к деталям на каждом этапе.</p>
-      <a href="#">Связаться с менеджером</a>
+      <h1 class="qaz">популярные направления</h1>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><h2>Paris,France</h2><p>романтика и история</p><img src="https://avatars.mds.yandex.net/i?id=b46a730353f831b246cbd706b7626c90_l-8806475-images-thumbs&n=13"></div>
+            <div class="swiper-slide"><h2>Bali,Indonesia</h2><p>пляжы и экжотика</p><img src="https://i.pinimg.com/originals/75/9e/6c/759e6cd1523abd146ff6688bf9260319.jpg"></div>
+            <div class="swiper-slide"><h2>Bern,switzerland</h2><p>горы и природа</p><img src="https://avatars.yandex.net/get-music-content/1880735/b33ae6ce.a.10486740-1/m1000x1000?webp=false"></div>
+        </div>
+    
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    
+        
+        <div class="swiper-pagination"></div>
     </div>
-
-    <div class="card">
-      <div class="icon">⭐</div>
-      <h3>Полная поддержка в Саудовской Аравии</h3>
-      <p>В любое время мы готовы помочь и решить любые вопросы, обеспечивая комфорт.</p>
-      <a href="#">Получить консультацию</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">⭐</div>
-      <h3>Индивидуальный подход для каждого</h3>
-      <p>Предоставляем персонализированные решения, учитывая все пожелания.</p>
-      <a href="#">Стать паломником</a>
-    </div>
-
-    <div class="card">
-      <div class="icon">⭐</div>
-      <h3>Премиальный сервис от начала до конца</h3>
-      <p>Обеспечиваем максимальный комфорт и внимание к деталям.</p>
-      <a href="#">Связаться с менеджером</a>
-    </div>
-  </div>
+      </div>
     </main>
-
-
 
     <footer>
       <div class="footer-container">
@@ -116,19 +159,19 @@
         <div class="footer-section">
           <h3>Следите за нами</h3>
           <div class="social-icons">
-            <a href="#"
+            <a href="https://www.facebook.com/"
               ><img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/768px-Facebook_Logo_%282019%29.png"
                 alt="Facebook"
               />Facebook</a
             >
-            <a href="#"
+            <a href="https://x.com/"
               ><img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Logo_of_Twitter.svg/1200px-Logo_of_Twitter.svg.png"
                 alt="Twitter"
               />Twitter</a
             >
-            <a href="#"
+            <a href="https://www.instagram.com/"
               ><img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/2048px-Instagram_logo_2016.svg.png"
                 alt="Instagram"
@@ -138,7 +181,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Все права защищены</p>
+        <p class="copy">&copy; 2025 Все права защищены</p>
       </div>
     </footer>
     <script src="script.js"></script>
